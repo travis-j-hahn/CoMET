@@ -30,10 +30,10 @@ def get_requirements(requirements_filename):
         requirements = [
             line.strip() for line in f.readlines() if not line.startswith("#")
         ]
-    # Iris has a different name on PyPI...
-    if "iris" in requirements:
-        requirements.remove("iris")
-        requirements.append("scitools-iris")
+    # Iris has a different name on PyPI... don't know if this will be a dependency yet
+#    if "iris" in requirements:
+#        requirements.remove("iris")
+#        requirements.append("scitools-iris")
     return requirements
 
 
@@ -55,6 +55,7 @@ CLASSIFIERS = [
     "Programming Language :: Python :: 3 :: Only",
     "Topic :: Scientific/Engineering",
     "Topic :: Scientific/Engineering :: Atmospheric Science",
+    "Topic :: Scientific/Engineering :: Information Analysis"
 ]
 
 
@@ -66,12 +67,13 @@ setup(
     classifiers=CLASSIFIERS,
     author=[
         "Travis Hahn",
-        "",
-        ""
+        "Dié Wang",
+        "Jingyi Chen"
     ],
     author_email=[
         "travis.hahn@psu.edu",
-        ""
+        "diewang@bnl.gov",
+        "jingyichen89@gmail.com"
     ],
     license="BSD-3-Clause License",
     packages=[PACKAGE_NAME, PACKAGE_NAME + ".utils", PACKAGE_NAME + ".utils.internal"],
